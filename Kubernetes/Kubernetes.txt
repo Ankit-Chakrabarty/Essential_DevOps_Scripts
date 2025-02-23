@@ -1,0 +1,47 @@
+-------------------------------------------Kubernetes-------------------------------------------------------------------------
+Introduction to Kubernetes------>>>>>
+➡️Developed by Google, now maintained by CNCF.
+➡️Docker is a container platform where as k8s is a container orchestration.
+➡️Automates deployment and scaling of containerized apps.
+➡️Autoscaling: Scales up/down to handle traffic.
+➡️Auto-healing: Recreates pods if containers crash.
+➡️Solves heavy load problems with load balancing and rollback.
+
+cluster-------------------------------->>
+➡️A cluster consists of multiple interconnected nodes working together.
+➡️A Kubernetes cluster has worker nodes running apps, controlled by master.
+Kubernetes tools----------------------------->>
+➡️➡️Kubeadm-(Kubeadm multinode cluster with a single master)
+➡️➡️Minikube -(creates a single-node Kubernetes cluster)
+➡️➡️Kind-(runs Kubernetes clusters inside Docker for testing.)
+➡️➡️Google Kubernetes Engine (GKE)--(managed Kubernetes service by Google Cloud)
+➡️➡️Kops-(managed by AWS)
+➡️➡️AKS(Azure Kubernetes Service)-(provided by Microsoft Azure)
+      
+      ⭐⭐👉🏼[Pod → Deployment → Service → User]👉🏼⭐⭐
+Pod->The smallest unit of Kubernetes
+   ➡️A Pod is a portable wrapper around one or more containers.
+   ➡️It offers shared networking and storage for containers.
+   ➡️We can deploy multiple containers inside a single Pod.
+   ➡️Containers within a Pod can communicate easily since they share the same network.
+   ➡️Pods are the smallest units in Kubernetes that run containers,A ReplicaSet manages the number of Pods running.
+
+ReplicaSet➡️➡️If one Pod crashes, the ReplicaSet will create a new one automatically to keep the total number the same.
+            ➡️It ensures that the specified number of Pods are always active.
+            ➡️ReplicaSet does not handle updates or rollbacks, which can lead to downtime during changes.
+
+Deployment➡️➡️It uses a rolling update strategy to replace Pods gradually without downtime.
+            ➡️To upgrade from version v1 to v2 in Kubernetes, 
+                 update the deployment image. Kubernetes will automatically replace the old Pods with new ones.
+                 If version v1 was working fine and you want to go back to v1, the **ReplicaSet** doesn’t handle updates,
+                 rollbacks. Rollbacks are managed by **Deployments** in Kubernetes.
+                 ["Rolling updates replace pods without downtime."]
+
+Service➡️➡️Exposes the Pods to the network, allowing external or internal access.
+User➡️➡️(is the person or system accessing the application.)
+##################################################################################################################################################
+##################################################################################################################################################
+
+
+
+

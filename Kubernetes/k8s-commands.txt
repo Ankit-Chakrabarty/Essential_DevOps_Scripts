@@ -1,0 +1,42 @@
+🌟🌟🌟🌟🌟🌟🌟🌟🌟There are two main ways to create a Pod🌟🌟🌟🌟🌟🌟🌟🌟🌟
+Example YAML file (pod.yml):(write)✅✅
+kubectl apply -f pod.yml➡️➡️(**"Apply Pod configuration from pod.yml"**)
+kubectl delete -f pod.yml➡️➡️("Delete Pod defined in pod.yml)
+
+Using the command line:✅✅
+kubectl run my-pod --image=nginx --restart=Never➡️➡️("**"Create a pod using image"**")
+kubectl get ns➡️➡️(List all Kubernetes namespaces)
+kubectl create ns nginx➡️➡️("Create a namespace named nginx")
+kubectl get pods -n nginx➡️➡️("List Pods in the "nginx" namespace")
+kubectl get deployment -n nginx
+kubectl delete pod <pod-name>➡️➡️("delete a Pod")
+kubectl delete pods --all -n <namespace>➡️➡️("delete all Pods in a specific namespace")
+###################################################################################################################################
+ReplicaSet:-
+kubectl scale deployment/<your-deployment-name> -n <namespace> --replicas=<number-of-replicas>
+example:-
+kubectl scale deployment/nginx-deployment -n nginx --replicas=5➡️➡️((Scale `nginx-deployment` to 5 replicas.))
+kubectl get pods -n nginx -o wide➡️➡️(("List nginx pods with details."))
+1. Create a ReplicaSet(YAML file)
+2. kubectl apply -f replicaset.yml
+   kubectl get replicasets
+3. kubectl get replicasets -n <namespace-name>
+example:-
+kubectl get replicasets -n nginx
+###################################################################################################################################
+rollback update-->>
+kubectl set image deployment/<deployment-name> -n <namespace> <container-name>=<image>:<version>
+example:-
+kubectl set image deployment/nginx-deployment -n nginx nginx=nginx:1.27.3➡️➡️(("Update nginx container image to 1.27.3"))
+kubectl set image deployment/nginx-deployment -n nginx nginx=nginx:1.26.2
+kubectl set image deployment/nginx-deployment -n nginx nginx=nginx:latest➡️➡️(("Update nginx image to latest."))
+###################################################################################################################################
+DaemonSet in Kubernetes:-
+
+
+
+
+
+
+
+

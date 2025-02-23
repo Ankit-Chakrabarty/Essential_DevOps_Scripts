@@ -1,0 +1,9 @@
+sudo apt-get update------------------------------>>Update package list.
+sudo apt-get install docker.io---------------------->>Install Docker engine.
+docker --version------------------------------------>>Check Docker version.
+systemctl status docker----------------------------->>Check if Docker container running or not.
+sudo usermod -aG docker $USER------------------------->>Add user to Docker group for access.
+cat /etc/group----------------------------------------->>List user groups.
+sudo reboot--------------------------------------------->>Reboot system.
+docker ps----------------------------------------------->>List running containers.
+=============================================================================================================================
